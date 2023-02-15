@@ -3,6 +3,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         event={ "BufReadPost", "BufNewFile" },
         build=":TSUpdate",
+        dependencies={"nvim-treesitter/nvim-treesitter-context",config=true},
         opts={
             auto_install = true,
             highlight={
