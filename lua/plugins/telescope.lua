@@ -4,7 +4,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
-        depedencies={'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        dependencies={'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         keys = {
             { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
             { "<leader>/", Util.telescope("live_grep"), desc = "Find in Files (Grep)" },
