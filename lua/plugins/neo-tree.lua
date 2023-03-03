@@ -24,6 +24,10 @@ return {
                     winbar = false,
                     statusline = false
                 },
+                filesystem={
+                    follow_current_file=true,
+                    group_empty_dirs=true,
+                },
                 event_handlers = {
 
                     {
