@@ -13,6 +13,13 @@ return {
             'hrsh7th/cmp-nvim-lua', -- neovim api completion
             'ray-x/cmp-treesitter', -- treesiter completion
             "onsails/lspkind.nvim", -- symbole
+            {
+                "windwp/nvim-autopairs",
+                opts={
+                    check_ts = true,
+                },
+                config = true
+            }
         },
         opts=function ()
             local cmp=require("cmp")
@@ -71,7 +78,12 @@ return {
                     { name = 'buffer' }
                 }
             })
-
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            local cmp = require('cmp')
+            cmp.event:on(
+                'confirm_done',
+                cmp_autopairs.on_confirm_done()
+            )
             -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
             -- cmp.setup.cmdline(':', {
             --     mapping = cmp.mapping.preset.cmdline(),
@@ -110,11 +122,4 @@ return {
             { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
         },
     },
-    {
-        "echasnovski/mini.pairs",
-        event = "VeryLazy",
-        config = function(_, opts)
-            require("mini.pairs").setup(opts)
-        end,
-    }
 }
