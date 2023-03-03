@@ -30,8 +30,6 @@ return {
                 -- Enable completion triggered by <c-x><c-o>
                 vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-                print(vim.inspect(client.server_capabilities))
-
                 local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
                 vim.keymap.set( 'n', 'gD', function() require("telescope.builtin").lsp_references() end,desc(bufopts,'goto declaration'))
