@@ -39,4 +39,5 @@ opt.mouse = "a"
 
 opt.undofile=true
 
-
+opt.spell=true
+opt.spelllang={"fr","en"}
