@@ -32,7 +32,7 @@ return {
 
                 local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
-                vim.keymap.set( 'n', 'gD', function() require("telescope.builtin").lsp_references() end,desc(bufopts,'goto declaration'))
+                vim.keymap.set( 'n', 'gD', function() vim.lsp.buf.declaration() end,desc(bufopts,'goto declaration'))
                 vim.keymap.set( 'n', 'gd', function() vim.lsp.buf.definition() end,desc(bufopts,"goto definition"))
                 vim.keymap.set( 'n', 'K', function() vim.lsp.buf.hover() end,desc(bufopts,"display info"))
                 vim.keymap.set( 'n', 'gi', function() vim.lsp.buf.implementation() end,desc(bufopts,"goto implementation"))
@@ -42,7 +42,7 @@ return {
                 vim.keymap.set( 'n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,desc(bufopts,"list all folder of workspace"))
                 vim.keymap.set( 'n', '<leader>D', function() vim.lsp.buf.type_definition() end,desc(bufopts,"goto type definition"))
                 vim.keymap.set( {'n','v'}, '<leader>cr', function() vim.lsp.buf.rename() end,desc(bufopts,"rename symbole"))
-                vim.keymap.set( 'n', 'gr', function() require("telescope.builtin").references() end,desc(bufopts,"goto references"))
+                vim.keymap.set( 'n', 'gr', function() require("telescope.builtin").lsp_references() end,desc(bufopts,"goto references"))
                 vim.keymap.set( 'n', '<leader>ca', function() vim.lsp.buf.code_action() end,desc(bufopts,"code action"))
                 -- vim.keymap.set( 'n', '<leader>so', function () require('telescope.builtin').lsp_document_symbols() end,desc(bufopts,"document symbole"))
                 vim.keymap.set( 'n', '<leader>cd', function() vim.diagnostic.open_float(nil, {focus=false}) end,desc(bufopts,"code diagnostic"))
