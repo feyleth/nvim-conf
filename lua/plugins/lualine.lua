@@ -29,13 +29,17 @@ return {
                                 if next(clients) == nil then
                                     return msg
                                 end
+                                local clientString = ""
                                 for _, client in ipairs(clients) do
                                     local filetypes = client.config.filetypes
                                     if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                                        return client.name
+                                        clientString = clientString .. ", " .. client.name
                                     end
                                 end
-                                return msg
+                                if clientString=="" then
+                                    return msg
+                                end
+                                return string.sub(clientString,3)
                             end,
                             icon = ' LSP:',
                             -- color = { fg = '#ffffff', gui = 'bold' },
