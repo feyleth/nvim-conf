@@ -55,8 +55,13 @@ return {
                         hl_group = "LspCodeLens",
                     },
                 },
+
                 formatting = {
-                    format = lspkind.cmp_format(),
+                    format = function (entry,vim_item)
+                        local res = lspkind.cmp_format()(entry,vim_item)
+                        res = vim.tbl_extend("force",res, {menu=entry.source.name})
+                        return res
+                    end ,
                 },
             }
         end,
