@@ -20,7 +20,7 @@ return { -- Autoformat
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      typescript = { { 'prettierd', 'prettier' } },
+      typescript =  { 'prettierd', 'prettier' } ,
       c = { lsp_format = 'never' },
       cpp = { lsp_format = 'never' },
     },
