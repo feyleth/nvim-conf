@@ -3,6 +3,7 @@ return {
   dependencies = {
     "xzbdmw/colorful-menu.nvim",
   },
+  version = "1.*",
   opts = {
     completion = {
       menu = {
