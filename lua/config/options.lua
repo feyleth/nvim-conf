@@ -9,4 +9,6 @@ vim.opt.wrap = true
 vim.opt.clipboard = ""
 vim.g.snacks_animate = false
 
+vim.o.diffopt = "vertical," .. vim.o.diffopt
 vim.g.lazyvim_blink_main = true
+vim.go.inccommand = "split"
