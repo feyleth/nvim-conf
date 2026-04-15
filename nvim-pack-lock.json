@@ -45,10 +45,6 @@
       "rev": "42387c7fe68fc0b6e95eaf37f1bb76e7bffaa0d9",
       "src": "https://github.com/nvim-mini/mini.pairs"
     },
-    "nvim-lsp-notify": {
-      "rev": "9541bdde0b84b7a33a24dbc2eccc3df33d4a0cdb",
-      "src": "https://github.com/mrded/nvim-lsp-notify"
-    },
     "nvim-lspconfig": {
       "rev": "d10ce09e42bb0ca8600fd610c3bb58676e61208d",
       "src": "https://github.com/neovim/nvim-lspconfig"

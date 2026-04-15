@@ -1,4 +1,4 @@
 Config.now(function()
   vim.pack.add({"https://github.com/folke/tokyonight.nvim"})
-  vim.cmd[[colorscheme tokyonight]]
+  vim.cmd[[colorscheme tokyonight-night]]
 end)
