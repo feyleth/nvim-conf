@@ -3,6 +3,11 @@ Config.later(function ()
     "https://github.com/nvim-telescope/telescope.nvim",
     "https://github.com/nvim-lua/plenary.nvim",
   })
+  require('telescope').setup{
+      defaults = {
+          path_display={"smart"}
+      }
+  }
   local builtin = require('telescope.builtin')
 
   vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
