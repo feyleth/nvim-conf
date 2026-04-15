@@ -1,7 +1,11 @@
 Config.later(function ()
   vim.pack.add({"https://github.com/nvim-tree/nvim-tree.lua","https://github.com/folke/snacks.nvim"})
   
-  require("nvim-tree").setup()
+  require("nvim-tree").setup({
+    renderer={
+      group_empty=true
+    }
+  })
 
   vim.keymap.set("n","\\","<cmd>NvimTreeOpen<cr>",{silent=true})
 
