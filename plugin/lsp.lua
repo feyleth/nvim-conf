@@ -15,6 +15,7 @@ Config.now_if_args(function()
   -- })
   Config.on_event("LspAttach",function ()
     nmap("<leader>ca",vim.lsp.buf.code_action,"code action")
+    nmap("<leader>cr",vim.lsp.buf.rename,"code rename")
     nmap("gd",vim.lsp.buf.definition,"Goto Definition")
     nmap("gr",vim.lsp.buf.references,"Goto References")
     nmap("gI",vim.lsp.buf.implementation,"Goto Implementation")
@@ -38,4 +39,3 @@ Config.now_if_args(function()
   require("mason-lspconfig").setup()
   require("fidget").setup{}
 end)
-
